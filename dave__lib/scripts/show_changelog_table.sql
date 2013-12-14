@@ -1,0 +1,1 @@
+SHOW TABLES LIKE 'scheme_change_log'

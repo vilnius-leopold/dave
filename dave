@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+#require Dave class
+install_path = '/usr/lib/dave/'
+require_relative "#{install_path}dave.rb"
+
+#intialize Dave
+dave = Dave.new
+
+# lookup function call
+function = ARGV.shift
+
+case function
+when "init"
+  dave.init
+when "create"
+  dave.create(ARGV)
+when "update"
+  dave.update(ARGV)
+when "rollback"
+  dave.rollback(ARGV)
+when "push"
+  dave.push(ARGV)
+when "setup"
+  dave.setup(ARGV)
+when "-v", "--version"
+  dave.version
+when "-L", "status"
+  dave.list_updates
+else
+	puts "dave - command not found"
+end
